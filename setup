@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -e # Stop execution if one of command raised error
+
+echo "bash dot/setup"
+
+for item in vim tmux; do
+  cd $item && ./setup
+  cd -
+done
+
