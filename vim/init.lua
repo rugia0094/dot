@@ -56,11 +56,33 @@ vim.opt.termguicolors = true
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
+-- TODO show trailing spaces and tabs
+
 -- -------------------- Setup lazy.nvim --------------------
 
 require("lazy").setup({
   spec = {
-    { "rose-pine/neovim", name = "rose-pine" },  
+    -- Rose pine colorscheme
+    { "rose-pine/neovim", name = "rose-pine" },
+
+
+    -- Treesitter for better syntax highlighting and more
+    {
+      "nvim-treesitter/nvim-treesitter",
+      build = ":TSUpdate",
+      config = function ()
+        local configs = require("nvim-treesitter.configs")
+
+        configs.setup({
+          -- ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "typescript", "html" },
+          ensure_installed = "all",
+          sync_install = true,
+          auto_instal = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+        })
+      end
+    },
   },
 
   install = { missing = true, colorscheme = { "rose-pine" } },
@@ -84,7 +106,7 @@ require("rose-pine").setup({
 
   styles = {
     bold = false,
-    italic = true,
+    italic = false,
     transparency = true,
   },
 })
