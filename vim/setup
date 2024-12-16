@@ -4,3 +4,6 @@ echo "bash dot/vim/setup"
 
 ln -sf "$PWD/vimrc" "$HOME/.vimrc"
 
+mkdir -p "$HOME/.config/nvim"
+ln -sf "$PWD/init.lua" "$HOME/.config/nvim/init.lua"
+
