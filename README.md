@@ -21,4 +21,12 @@ $ sudo apt install lua5.3 liblua5.3-dev neovim python3-neovim lynx unzip
 
 Follow guide from here (https://luarocks.org/)
 
+## Install
 
+Run in project root
+
+```shell
+$ ./setup
+```
+
+It may need to `chmod +x setup` for all of setup files in subdirectories
