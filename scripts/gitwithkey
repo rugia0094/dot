@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+if [ -z "$1" ]; then
+  echo "ERROR: Provide git command as first argument"
+  exit 1
+fi
+
+if [ -z "$2" ]; then
+  echo "ERROR: Provide path to ssh key as second argument"
+  exit 1
+fi
+
+if [ ! -f "$2" ]; then
+  echo "ERROR: There is no file '$2'"
+  exit 1
+fi
+
+git help "$1" > /dev/null 2>&1
+
+if [ $? -ne 0 ];then
+  echo "ERROR: '$1' is not a git command"
+  exit 1
+fi
+
+ssh-agent bash -c "ssh-add $2;git $1"
+
