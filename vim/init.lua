@@ -23,6 +23,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- -------------------- vim options --------------------
 
+vim.opt.laststatus = 0
+
 vim.opt.updatetime = 50
 
 vim.opt.swapfile = false
