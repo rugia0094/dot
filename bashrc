@@ -44,7 +44,23 @@ pathprepend() {
 
 # -------------------- Prompt --------------------
 
-export PS1='\[\e[92m\]\u\[\e[0m\] at \[\e[92m\]\H\[\e[0m\] in \[\e[92m\]\w\[\e[0m\] \$ '
+_dir_chomp () {
+  local p=${1/#$HOME/\~} b s
+  s=${#p}
+
+  while [[ $p != "${p//\/}" ]]&&(($s>$2))
+  do
+    p=${p#/}
+    [[ $p =~ \.?. ]]
+    b=$b/${BASH_REMATCH[0]}
+    p=${p#*/}
+    ((s=${#b}+${#p}))
+  done
+
+  echo ${b/\/~/\~}${b+/}$p
+}
+
+export PS1='\[\e[92m\]\u\[\e[0m\] at \[\e[92m\]\h\[\e[0m\] in $(_dir_chomp "$(pwd)" 20) $ '
 
 # -------------------- Bash Shell Options --------------------
 
