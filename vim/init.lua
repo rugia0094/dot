@@ -67,6 +67,36 @@ require("lazy").setup({
     -- Rose pine colorscheme
     { "rose-pine/neovim", name = "rose-pine" },
 
+    -- LSP
+
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+    {
+        "neovim/nvim-lspconfig",
+
+        config = function()
+          require('mason').setup()
+
+          require('mason-lspconfig').setup {
+            ensure_installed = { 'ts_ls', 'volar' },
+            automatic_installation = true,
+          }
+
+          require'lspconfig'.ts_ls.setup{
+            init_options = {
+              plugins = {
+                name = "@vue/typescript-plugin",
+                location = "/home/anton/.nvm/versions/node/v22.11.0/lib/node_modules/@vue/typescript-plugin",
+                languages = { 'vue' },
+              },
+            },
+
+            filetypes = { 'javascript', 'typescript', 'vue', 'javascriptreact', 'typescriptreact' },
+          }
+
+          require'lspconfig'.volar.setup{}
+        end,
+    },
 
     -- Treesitter for better syntax highlighting and more
     {
