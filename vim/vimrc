@@ -1,0 +1,52 @@
+" -------------------- Right columns --------------------
+
+set number
+
+" -------------------- Options --------------------
+
+syntax on
+set nocompatible
+set nowrap
+set history=100
+set laststatus=0
+
+" -------------------- Backup files -------------------
+
+set nobackup
+set noswapfile
+set nowritebackup
+
+" -------------------- Indentation --------------------
+
+set autoindent
+set expandtab
+set smarttab
+set smartindent
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" -------------------- Cursor as line in INSERT mode --------------------
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" -------------------- Spaces and Tabs --------------------
+
+" Mark trailing spaces as error
+match Visual '\s\+$'
+
+" -------------------- Search --------------------
+
+set hlsearch
+set incsearch
+set wrapscan
+
+" -------------------- Colorscheme --------------------
+
+highlight Normal ctermbg=Black
+highlight NonText ctermbg=Black
+
+" set background=dark
+colorscheme default
