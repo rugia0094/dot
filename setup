@@ -4,6 +4,8 @@ set -e # Stop execution if one of command raised error
 
 echo "bash dot/setup"
 
+ln -sf "$PWD/bashrc" "$HOME/.bashrc"
+
 for item in vim tmux; do
   cd $item && ./setup
   cd -
