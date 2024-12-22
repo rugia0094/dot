@@ -60,7 +60,7 @@ _dir_chomp () {
   echo ${b/\/~/\~}${b+/}$p
 }
 
-export PS1='\[\e[92m\]\u\[\e[0m\] at \[\e[92m\]\h\[\e[0m\] in $(_dir_chomp "$(pwd)" 20) $ '
+export PS1='\[\e[92m\]\u\[\e[0m\] at \[\e[92m\]\h\[\e[0m\] in $(_dir_chomp "$(pwd)" 10) $ '
 
 # -------------------- Bash Shell Options --------------------
 
