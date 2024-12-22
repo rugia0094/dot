@@ -15,6 +15,7 @@ set laststatus=0
 set nobackup
 set noswapfile
 set nowritebackup
+set updatetime=100
 
 " -------------------- Indentation --------------------
 
