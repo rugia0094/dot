@@ -13,7 +13,6 @@ if with_plugins
   endif
 
   call plug#begin()
-  Plug 'sainnhe/everforest'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   call plug#end()
 endif
@@ -66,27 +65,20 @@ set wrapscan
 
 " -------------------- Colorscheme --------------------
 
-highlight Normal ctermbg=Black
-highlight NonText ctermbg=Black
+" highlight Normal ctermbg=Black
+" highlight NonText ctermbg=Black
 
-" set background=dark
-colorscheme default
+if has('termguicolors')
+  set termguicolors
+endif
+
+set background=dark
+colorscheme habamax
 
 " -------------------- Plugins Setup --------------------
 
-let g:everforest_better_performance = 1
-let g:everforest_disable_italic_comment = 1
-let g:everforest_background = 'hard'
-
 if with_plugins
   set signcolumn=yes
-
-  if has('termguicolors')
-    set termguicolors
-  endif
-
-  set background=dark
-  colorscheme everforest
 
   " Coc Setup
   " Need to do :CocInstall coc-json coc-tsserver coc-eslint coc-prettier
