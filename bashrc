@@ -113,3 +113,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 # -------------------- Custom scripts --------------------
 
 export PATH=$PATH:$HOME/dot/scripts
+
+# -------------------- Go --------------------
+
+export PATH=$PATH:/usr/local/go/bin
