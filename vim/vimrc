@@ -81,5 +81,5 @@ if with_plugins
   set signcolumn=yes
 
   " Coc Setup
-  " Need to do :CocInstall coc-json coc-tsserver coc-eslint coc-prettier
+  " Need to do :CocInstall coc-go coc-json coc-tsserver coc-eslint coc-prettier
 endif
