@@ -83,7 +83,7 @@ if with_plugins
   set signcolumn=yes
 
   " Coc Setup
-  " Need to do :CocInstall coc-go coc-json coc-tsserver coc-eslint coc-prettier coc-css
+  " Need to do :CocInstall @yaegassy/coc-volar coc-go coc-json coc-tsserver coc-eslint coc-prettier coc-css
   inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
   nmap <silent> gd <Plug>(coc-definition)
