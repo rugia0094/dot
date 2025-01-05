@@ -74,9 +74,21 @@ colorscheme torte " habamax if eyes are bad =(
 
 " -------------------- Plugins Setup --------------------
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
 if with_plugins
   set signcolumn=yes
 
   " Coc Setup
-  " Need to do :CocInstall coc-go coc-json coc-tsserver coc-eslint coc-prettier
+  " Need to do :CocInstall coc-go coc-json coc-tsserver coc-eslint coc-prettier coc-css
+  inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
+  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+  command! -nargs=0 Format :call CocActionAsync('format')
 endif
