@@ -65,15 +65,12 @@ set wrapscan
 
 " -------------------- Colorscheme --------------------
 
-" highlight Normal ctermbg=Black
-" highlight NonText ctermbg=Black
-
 if has('termguicolors')
   set termguicolors
 endif
 
 set background=dark
-colorscheme habamax
+colorscheme torte " habamax if eyes are bad =(
 
 " -------------------- Plugins Setup --------------------
 
