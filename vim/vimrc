@@ -72,6 +72,9 @@ endif
 set background=dark
 colorscheme torte " habamax if eyes are bad =(
 
+" Transparent bg. Comment string below to disable
+hi Normal guibg=NONE ctermbg=NONE
+
 " -------------------- Plugins Setup --------------------
 
 function! CheckBackspace() abort
